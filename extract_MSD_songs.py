@@ -1,6 +1,7 @@
 import os
 import h5py
 import csv
+import pandas as pd
 
 main=['A','B']
 a=ord('A')
@@ -25,7 +26,7 @@ for i in main:
                     b=list(f1['metadata']['songs'])[0][14].decode('UTF-8')
                     c=list(f1['metadata']['songs'])[0][18].decode('UTF-8')
                     d=list(f1['musicbrainz']['songs'])[0][1]
-                    ll1.append((a,b,c,d))
+                    ll1.append([a,b,c,d])
     if i=='B':
         for j in sub_dirB:
             if j!='I':
@@ -40,7 +41,7 @@ for i in main:
                         b=list(f1['metadata']['songs'])[0][14].decode('UTF-8')
                         c=list(f1['metadata']['songs'])[0][18].decode('UTF-8')
                         d=list(f1['musicbrainz']['songs'])[0][1]
-                        ll1.append((a,b,c,d))
+                        ll1.append([a,b,c,d])
             else:
                 for k in sub_dirB2:
                     path=os.path.join('data',i,j,k)
@@ -53,12 +54,7 @@ for i in main:
                         b=list(f1['metadata']['songs'])[0][14].decode('UTF-8')
                         c=list(f1['metadata']['songs'])[0][18].decode('UTF-8')
                         d=list(f1['musicbrainz']['songs'])[0][1]
-                        ll1.append((a,b,c,d))
-print(count)
+                        ll1.append([a,b,c,d])
 
-
-with open('file.csv','w') as out:
-    csv_out=csv.writer(out)
-    csv_out.writerow(['A','B','C','D'])
-    for row in ll1:
-        csv_out.writerow(row)
+df = pd.DataFrame.from_records(ll1)
+df.to_excel('file.xls',index=False,header=False)
