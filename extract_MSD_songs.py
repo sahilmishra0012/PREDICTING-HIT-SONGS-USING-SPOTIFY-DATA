@@ -26,7 +26,8 @@ for i in main:
                     b=list(f1['metadata']['songs'])[0][14].decode('UTF-8')
                     c=list(f1['metadata']['songs'])[0][18].decode('UTF-8')
                     d=list(f1['musicbrainz']['songs'])[0][1]
-                    ll1.append([a,b,c,d])
+                    e=list(f1['analysis']['songs'])[0][-1].decode('UTF-8')
+                    ll1.append([a,b,c,d,e])
     if i=='B':
         for j in sub_dirB:
             if j!='I':
@@ -41,7 +42,8 @@ for i in main:
                         b=list(f1['metadata']['songs'])[0][14].decode('UTF-8')
                         c=list(f1['metadata']['songs'])[0][18].decode('UTF-8')
                         d=list(f1['musicbrainz']['songs'])[0][1]
-                        ll1.append([a,b,c,d])
+                        e=list(f1['analysis']['songs'])[0][-1].decode('UTF-8')
+                        ll1.append([a,b,c,d,e])
             else:
                 for k in sub_dirB2:
                     path=os.path.join('data',i,j,k)
@@ -54,7 +56,8 @@ for i in main:
                         b=list(f1['metadata']['songs'])[0][14].decode('UTF-8')
                         c=list(f1['metadata']['songs'])[0][18].decode('UTF-8')
                         d=list(f1['musicbrainz']['songs'])[0][1]
-                        ll1.append([a,b,c,d])
+                        e=list(f1['analysis']['songs'])[0][-1].decode('UTF-8')
+                        ll1.append([a,b,c,d,e])
 
 df = pd.DataFrame.from_records(ll1)
 print("File Saved")
