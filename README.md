@@ -14,4 +14,4 @@ After that null values were removed from both the datasets and in Million Songs 
 
 Then, I applied Logistic Regression on the dataset after removing outliers and other preprocessing steps. The evaluation metric under observance are accuracy and area under curve(AUC). After proper hyperparameter tuning, both accuracy and AUC score are 100%.
 
-I will also implement neural networks on the dataset later.
+I will also implement neural networks on the dataset in later stage.
