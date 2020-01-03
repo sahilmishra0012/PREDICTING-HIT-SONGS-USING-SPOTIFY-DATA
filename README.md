@@ -11,3 +11,7 @@ Songs Dataset both. The features fetched were: danceability, energy, key, loudne
 acousticness, instrumentalness, liveness, valence, tempo and duration_ms.
 
 After that null values were removed from both the datasets and in Million Songs Dataset, the songs between years 1990 and 2018 were considered only. Then , the songs in Billboard dataset were labelled 'Hit' while the songs in Million Songs Dataset whose Spotify IDs were not present in Billboard dataset were labelled 'Non Hit'. After that the datasets were merged. So, the final dataset has both 'Hit' and 'Non Hit' songs from both Billboard dataset and Million Songs Dataset.
+
+Then, I applied Logistic Regression on the dataset after removing outliers and other preprocessing steps. The evaluation metric under observance are accuracy and area under curve(AUC). After proper hyperparameter tuning, both accuracy and AUC score are 100%.
+
+I will also implement neural networks on the dataset later.
